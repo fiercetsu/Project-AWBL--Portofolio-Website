@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-Portofolio</title>
+    <meta name="theme-color" content="#328E6E">
+</head>
+<body>
+    <nav class="navbar-section">
+        <div class="navbar-content">
+            <a href="" class="navbar-title">Your Portofolio</a>
+            <ul class="navbar-content-list">
+                <li class="navbar-list">
+                    <a href="#aboutSection" class="navbar-menu">About</a>
+                </li>
+                <li class="navbar-list">
+                    <a href="#mainSection" class="navbar-menu">Testimoni</a>
+                </li>
+                <li class="navbar-list">
+                    <a href="#projectSection" class="navbar-menu">Project</a>
+                </li>
+            </ul>
+            <button type="button" class="btn-contact" onclick="contactUs()">Contact Us</button>
+        </div>
+    </nav>
+    <section class="hero-section" id="aboutSection">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2 class="hero-title">Hai, saya Ranu — Seorang Web Developer & UI/UX Designer</h2>
+                <p class="hero-paragraph">
+                    Saya membangun website yang menarik, responsif, dan fungsional untuk personal brand, bisnis, maupun proyek kreatif.
+                </p>
+            </div>
+            <div class="hero-content-img">
+                <img src="./mohammad-rahmani-oXlXu2qukGE-unsplash.jpg" alt="Portfolio Hero Image" class="hero-img">
+            </div>
+        </div>
+    </section>
+    <section class="main-section" id="mainSection">
+        <div class="main-container">
+            <div class="main-content">
+                <p class="main-title">Proyek Selesai</p>
+                <p class="main-total">25+ Project</p>
+            </div>
+            <div class="main-content2">
+                <p class="main-title">Klien Puas</p>
+                <p class="main-total2">15+ Klien</p>
+            </div>
+        </div>
+    </section>
+    <section class="project-section" id="projectSection">
+        <div class="project-container">
+            <h2 class="project-title">Project</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 class="project-name">Website Portfolio</h3>
+                    <p class="project-description">Desain dan pengembangan website portfolio yang responsif menggunakan HTML, CSS, dan JavaScript.</p>
+                    <button class="btn-project" onclick="alertProject()">Lihat Detail</button>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-name">Aplikasi Todo List</h3>
+                    <p class="project-description">Aplikasi manajemen tugas menggunakan framework modern untuk memudahkan produktivitas.</p>
+                    <button class="btn-project" onclick="alertProject()">Lihat Detail</button>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-name">Sistem Beasiswa</h3>
+                    <p class="project-description">Sistem pendaftaran dan pengelolaan beasiswa berbasis web untuk institusi pendidikan.</p>
+                    <button class="btn-project" onclick="alertProject()">Lihat Detail</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function contactUs(){
+            alert("Terima kasih telah menghubungi saya! saya akan segera merespons.");
+        }
+
+        function alertProject() {
+            alert("Halaman project belum tersedia.");
+        }
+
+        window.addEventListener("scroll", () => {
+            const nav = document.getElementsByClassName("navbar-section")[0];
+            const contact = document.getElementsByClassName("btn-contact")[0];
+            const a = document.getElementsByClassName("navbar-menu");
+            const navbarTitle = document.getElementsByClassName("navbar-title")[0];
+
+            if(window.scrollY > 1){
+                nav.classList.add("scrolled");
+                contact.classList.add("scrolled");
+                for(let i = 0;i < a.length; i++){
+                    a[i].classList.add("scrolled");
+                };
+                navbarTitle.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+                contact.classList.remove("scrolled");
+                for(let i = 0;i < a.length; i++){
+                    a[i].classList.remove("scrolled");
+                };
+                navbarTitle.classList.remove("scrolled");
+            }
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: sans-serif;
+        }
+
+        .navbar-title{
+            text-decoration: none;
+            font-weight: 900;
+            color: white;
+        }
+
+        .navbar-title.scrolled{
+            text-decoration: none;
+            font-weight: 900;
+            color: #3F7D58;
+        }
+
+        .navbar-menu{
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar-menu.scrolled{
+            text-decoration: none;
+            color: #3F7D58;
+        }
+
+        .navbar-section{
+            display: flex;
+            position: fixed;
+            top: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .navbar-section.scrolled{
+            display: flex;
+            position: fixed;
+            top: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 100%;
+        }
+
+        .navbar-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            width: 80%;
+            z-index: 1000;
+        }
+
+        .navbar-content-list{
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar-list{
+            list-style: none;
+        }
+
+        .btn-contact{
+            padding: 15px;
+            border: none;
+            font-size: small;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .btn-contact.scrolled{
+            padding: 15px;
+            border: none;
+            font-size: small;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            background-color: #3F7D58;
+        }
+
+        .hero-section{
+            display: flex;
+            margin-top: 47px;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 80vh;
+            background-color: #3F7D58;
+        }
+
+        .hero-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+        }
+
+        .hero-content{
+            width: 100%;
+        }
+
+        .hero-title{
+            width: 80%;
+            font-size: xx-large;
+            color: white;
+        }
+
+        .hero-paragraph{
+            width: 50%;
+            font-size: small;
+            color: white;
+            margin-top: 6px;
+        }
+
+        .hero-content-img {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .btn-started{
+            margin-top: 20px;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 30px;
+        }
+        .main-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .main-content,
+        .main-content2 {
+            flex: 1 1 300px;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .main-content:hover,
+        .main-content2:hover {
+            transform: translateY(-5px);
+        }
+        
+        .main-title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .main-total,
+        .main-total2 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #3F7D58;
+        }
+        
+        .project-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 0;
+            background-color: #f5f5f5;
+            width: 100%;
+        }
+
+        .project-container {
+            width: 80%;
+        }
+
+        .project-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #3F7D58;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .project-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .btn-project {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3F7D58;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-project:hover {
+            background-color: #2f6343;
+        }
+    </style>
+</body>
+</html>
